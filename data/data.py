@@ -17,7 +17,7 @@ class Data:
         return self.data_value
 
     def get_info(self):
-        return self.get_name, self.get_value
+        return self.get_name(), self.get_value()
 
     def get_lock_status(self):
         return self.lock_mode
@@ -27,3 +27,6 @@ class Data:
 
     def set_value(self, new_value: int):
         self.data_value = new_value
+
+    def __repr__(self) -> str:
+        return f"Data {self.data_name} = {self.data_value}."
