@@ -20,10 +20,10 @@ class Data:
         return self.get_name, self.get_value
 
     def get_lock_status(self):
-        return self.lock_type
+        return self.lock_mode
 
     def set_lock_mode(self, lock_mode: LockMode):
-        self.lock_type = lock_mode
+        self.lock_mode = lock_mode
 
     def set_value(self, new_value: int):
         self.data_value = new_value
