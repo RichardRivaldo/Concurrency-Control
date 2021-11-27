@@ -12,13 +12,17 @@ class Operation:
     target_data: Data
 
     def log(self, message: str):
-        print(
-            f"[T{self.transaction}: {self.operation_type.value} {self.target_data.get_name()}] {message}"
-        )
+        print(f"{self} {message}")
 
     def execute_read(self):
-        self.log(f"The data has value of {self.target_data.get_value()}.")
+        self.log(f"{self.target_data}")
 
     def execute_write(self, new_value: int):
         self.target_data.set_value(new_value=new_value)
         self.log(f"Successfully wrote the data!")
+
+    def get_target_data(self):
+        return self.target_data
+
+    def __repr__(self) -> str:
+        return f"[T{self.transaction}: {self.operation_type.value} {self.target_data.get_name()}]"
