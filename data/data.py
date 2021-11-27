@@ -6,6 +6,7 @@ from utils.lock_mode import LockMode
 
 @dataclass
 class Data:
+    # Assume unique data name
     data_name: str
     data_value: int
     lock_mode: LockMode = LockMode.UNLOCKED
@@ -19,7 +20,7 @@ class Data:
     def get_info(self):
         return self.get_name(), self.get_value()
 
-    def get_lock_status(self):
+    def get_lock_mode(self):
         return self.lock_mode
 
     def set_lock_mode(self, lock_mode: LockMode):
